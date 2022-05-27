@@ -4,8 +4,8 @@
   "description": "Curso do rodrigo manguinho",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:staged": "jest"
+    "test": "jest --passWithNoTests",
+    "test:staged": "jest --passWithNoTests"
   },
   "author": "",
   "license": "ISC",
