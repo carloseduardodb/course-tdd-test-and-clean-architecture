@@ -14,5 +14,10 @@ export const MongoHelper = {
 
   async disconnect (): Promise<void> {
     await this.client.close()
+  },
+
+  map: (id: string, collection: any): any => {
+    const returnResult = { id, ...collection }
+    return returnResult
   }
 }
