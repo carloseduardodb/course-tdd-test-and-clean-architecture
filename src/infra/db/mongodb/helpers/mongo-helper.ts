@@ -17,6 +17,7 @@ export const MongoHelper = {
   },
 
   map: (id: string, collection: any): any => {
+    delete collection._id
     const returnResult = { id, ...collection }
     return returnResult
   }
