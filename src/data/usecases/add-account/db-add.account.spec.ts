@@ -7,6 +7,7 @@ import { DbAddAccount } from './db-add-account'
 interface SutTypes {
   sut: DbAddAccount
   encrypterStub: Encrypter
+  addAccountRepositoryStub: AddAccountRepository
 }
 
 const makeEncrypter = (): Encrypter => {
@@ -35,11 +36,12 @@ const makeAddAccountRepository = (): AddAccountRepository => {
 
 const makeSut = (): SutTypes => {
   const encrypterStub = makeEncrypter()
-  const addAccountRepositorySpy = makeAddAccountRepository()
-  const sut = new DbAddAccount(encrypterStub, addAccountRepositorySpy)
+  const addAccountRepositoryStub = makeAddAccountRepository()
+  const sut = new DbAddAccount(encrypterStub, addAccountRepositoryStub)
   return {
     sut,
-    encrypterStub
+    encrypterStub,
+    addAccountRepositoryStub
   }
 }
 
